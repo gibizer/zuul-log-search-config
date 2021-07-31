@@ -1,0 +1,16 @@
+# libvirt.libvirtError: unable to connect to server at
+# https://bugs.launchpad.net/nova/+bug/1912310
+# logsearch  log --job nova-live-migration --project openstack/nova --branch master --result FAILURE --file job-output.txt --file controller/logs/screen-n-cpu.txt --file compute1/logs/screen-n-cpu.txt 'Connection to libvirt failed:|in test_volume_backed_live_migration|Live Migration failed.' 
+searches:
+  bug-1912310:
+    project: openstack/nova
+    jobs:
+      - nova-live-migration
+    branches:
+      - master
+    files:
+      - job-output.txt
+      - controller/logs/screen-n-cpu.txt
+      - compute1/logs/libvirt/libvirt/libvirtd_log.txt
+    result: FAILURE
+    regex: 'in test_volume_backed_live_migration|Live Migration failed.|Live Migration failure: unable to connect to server at|internal error:'

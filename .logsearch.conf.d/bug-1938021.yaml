@@ -1,0 +1,9 @@
+#logsearch log --job nova-tox-functional-py38 --job nova-tox-functional-centos8-py36 --project openstack/nova --result FAILURE --after-context 2 --limit 10 'delete_server_and_assert_cleanup'
+searches:
+  bug-1938021:
+    project: openstack/nova
+    jobs:
+      - nova-tox-functional-py38
+      - nova-tox-functional-centos8-py36
+    result: FAILURE
+    regex: 'delete_server_and_assert_cleanup'

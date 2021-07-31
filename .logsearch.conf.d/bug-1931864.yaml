@@ -1,0 +1,11 @@
+searches:
+  bug-1931864:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    branches:
+      - master
+      - stable/victoria
+    result: FAILURE
+    after-context: 5
+    regex: 'ERROR: Cannot install .* because these package versions have conflicting dependencies.'

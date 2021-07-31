@@ -1,0 +1,13 @@
+# https://bugs.launchpad.net/nova/+bug/1823251
+# Spike in TestNovaMigrationsMySQL.test_walk_versions/test_innodb_tables failures since April 1 2019 on limestone-regionone
+# logsearch log --job-group nova-unit-test --job-group nova-functional --project openstack/nova --result FAILURE --branch master --pipeline gate --limit 10 pymysql.err.InterfaceError
+searches:
+  bug-1823251:
+    project: openstack/nova
+    job-groups:
+      - nova-unit-test
+      - nova-functional
+    result: FAILURE
+    branches:
+      - master
+    regex: 'pymysql.err.InterfaceError'
