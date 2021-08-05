@@ -6,4 +6,4 @@ searches:
       - nova-tox-functional-py38
       - nova-tox-functional-centos8-py36
     result: FAILURE
-    regex: 'delete_server_and_assert_cleanup'
+    regex: 'delete_server_and_assert_cleanup|Deleting instance record from source cell'

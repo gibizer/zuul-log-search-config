@@ -1,0 +1,15 @@
+# https://zuul.opendev.org/t/openstack/build/a566aad8ef1146c598ea5b7b06de4644/log/controller/logs/grenade.sh_log.txt#1293
+# Invalid encryption spec (HTTP 400) 
+# during grenade cinder resource creation
+# logsearch log --job nova-grenade-multinode --branch master --result FAILURE --file controller/logs/grenade.sh_log.txt 'Invalid encryption spec'
+searches:
+  bug-1938763-invalid-encryption-spec:
+    jobs:
+      - nova-grenade-multinode
+      - grenade
+    result: FAILURE
+    branches:
+      - master
+    files:
+      - controller/logs/grenade.sh_log.txt
+    regex: 'Invalid encryption spec'

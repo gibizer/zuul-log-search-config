@@ -1,0 +1,11 @@
+# logsearch log --job-group nova-multinode --project openstack/nova --branch master  --result POST_FAILURE  'Compute host .* could not be found.' --limit 20
+searches:
+  bug-xxx-live-migration-host-not-found:
+    project: openstack/nova
+    job-groups:
+      - nova-multinode 
+    # FAILURE could be also match this
+    result: POST_FAILURE
+    branches:
+      - master
+    regex: 'Compute host .* could not be found.'
