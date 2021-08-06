@@ -1,0 +1,15 @@
+# tempest.api.compute.volumes.test_attach_volume_negative.AttachVolumeNegativeTest
+# fails due to detach failure during cleanup
+# https://bugs.launchpad.net/nova/+bug/1939108
+searches:
+  bug-1939108:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    files:
+      - controller/logs/screen-n-cpu.txt
+    result: FAILURE
+    branches:
+      - master
+    regex: 'from the live domain config. Device is still attached to the guest.'
+    limit: 100 
