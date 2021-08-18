@@ -1,0 +1,12 @@
+# https://bugs.launchpad.net/neutron/+bug/1940425
+# test_live_migration_with_trunk tempest test fails due to port remains in down state 
+# logsearch log --result FAILURE --job nova-next  --limit 30 --branch master 'Call _is_port_status_active returns false in 60.000000 seconds'
+searches:
+  bug-1940425-port-down-in-test_live_migration_with_trunk.yaml:
+    project: openstack/nova
+    jobs:
+      - nova-next
+    result: FAILURE
+    branches:
+      - master
+    regex: 'Call _is_port_status_active returns false in 60.000000 seconds'
