@@ -1,0 +1,12 @@
+# https://bugs.launchpad.net/nova/+bug/1936849
+# nova.tests.unit.virt.hyperv.test_serialproxy.SerialProxyTestCase.test_stop_serial_proxy failure
+# logsearch log --job-group nova-unit-test --result FAILURE --project openstack/nova --branch master 'test_serialproxy.py., line .*, in test_stop_serial_proxy'
+searches:
+  bug-1936849-test_stop_serial_proxy:
+    project: openstack/nova
+    job-groups:
+      - nova-unit-test
+    result: FAILURE
+    branches:
+      - master
+    regex: 'test_serialproxy.py., line .*, in test_stop_serial_proxy'

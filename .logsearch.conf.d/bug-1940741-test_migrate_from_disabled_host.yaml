@@ -1,0 +1,12 @@
+# https://bugs.launchpad.net/nova/+bug/1940741
+# func test test_bug_1938326.TestMigrateFromDownHost.test_migrate_from_disabled_host intermittently fails 
+# logsearch log --job-group nova-functional --result FAILURE --project openstack/nova --branch master 'test_bug_1938326.py., line .*, in test_migrate_from_disabled_host' 
+searches:
+  bug-1940741-test_migrate_from_disabled_host:
+    project: openstack/nova
+    job-groups:
+      - nova-functional
+    result: FAILURE
+    branches:
+      - master
+    regex: 'test_bug_1938326.py., line .*, in test_migrate_from_disabled_host'
