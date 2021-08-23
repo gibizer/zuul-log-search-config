@@ -1,0 +1,15 @@
+# https://bugs.launchpad.net/nova/+bug/1932043
+# nova-ceph-multinode test_resize_server_revert fails with rbd.ReadOnlyImage: [errno 30] RBD read-only image
+# But it is seen in different places. It can hit nova-compute or cinder-volume 
+# and it can cause failure in different tempest tests
+#
+# logsearch log --job nova-ceph-multistore --result FAILURE --file controller/logs/screen-c-vol.txt 'rbd.ReadOnlyImage: .errno 30. RBD read-only image'
+searches:
+  bug-1932043-rbd-read-only-image:
+    jobs:
+      - nova-ceph-multistore 
+    result: FAILURE
+    files:
+      - controller/logs/screen-c-vol.txt
+      - controller/logs/screen-n-cpu.txt
+    regex: 'rbd.ReadOnlyImage: .errno 30. RBD read-only image'

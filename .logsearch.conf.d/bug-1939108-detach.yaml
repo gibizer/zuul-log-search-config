@@ -2,7 +2,7 @@
 # fails due to detach failure during cleanup
 # https://bugs.launchpad.net/nova/+bug/1939108
 searches:
-  bug-1939108:
+  bug-1939108-detach-failure:
     project: openstack/nova
     job-groups:
       - nova-devstack
@@ -12,4 +12,3 @@ searches:
     branches:
       - master
     regex: 'from the live domain config. Device is still attached to the guest.'
-    limit: 100 

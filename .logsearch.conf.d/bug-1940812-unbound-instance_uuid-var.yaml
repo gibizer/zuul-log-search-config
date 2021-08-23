@@ -1,0 +1,11 @@
+# https://bugs.launchpad.net/nova/+bug/1940812
+# UnboundLocalError: local variable 'instance_uuid' referenced before assignment
+# logsearch log --job-group nova-devstack --result FAILURE --file controller/logs/screen-n-api.txt 'UnboundLocalError: local variable .instance_uuid. referenced before assignment'
+searches:
+  bug-1940812-unbound-instance_uuid-var:
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    files:
+      - controller/logs/screen-n-api.txt
+    regex: 'UnboundLocalError: local variable .instance_uuid. referenced before assignment'

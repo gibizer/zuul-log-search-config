@@ -1,0 +1,12 @@
+# seems to be a slow node from metadata-ovn -> nova-metadata it takes 5 seconds
+# the nova-metadata take > 30 sec to read the database resulting is timeout on
+# the test side that deletes the VM and then the metadata read fails on nova
+# logsearch log --result FAILURE --job tempest-integrated-compute 'Failed while verifying metadata on server. Result of command .curl http://169.254.169.254/latest/meta-data/public-ipv4. is NOT '
+searches:
+  bug-xxx-metadata-request-timed-out-2:
+    jobs:
+      - tempest-integrated-compute
+    result: FAILURE
+    branches:
+      - master
+    regex: 'Failed while verifying metadata on server. Result of command .curl http://169.254.169.254/latest/meta-data/public-ipv4. is NOT'

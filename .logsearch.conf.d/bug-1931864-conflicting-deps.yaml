@@ -1,5 +1,7 @@
+# https://bugs.launchpad.net/nova/+bug/1931864
+# Cannot install -r /home/zuul/src/opendev.org/openstack/nova/requirements.txt because these package versions have conflicting dependencies.
 searches:
-  bug-1931864:
+  bug-1931864-conflicting-deps:
     project: openstack/nova
     job-groups:
       - nova-devstack
