@@ -1,9 +1,9 @@
 # logsearch log --result FAILURE --job nova-next  --limit 20 --branch master 'set -eu -o pipefail; PATH=.PATH:/sbin:/usr/sbin; curl http://169.254.169.254/openstack/latest/meta_data.json'
 searches:
-  bug-xxx-metadata-request-timed-out.yaml:
+  bug-xxx-metadata-request-timed-out:
     project: openstack/nova
-    jobs:
-      - nova-next
+    job-groups:
+      - nova-devstack
     result: FAILURE
     branches:
       - master
