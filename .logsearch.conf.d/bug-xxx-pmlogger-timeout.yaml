@@ -1,0 +1,10 @@
+# in a multinode job this can cause that a compute is not starting up but it is not detected by the stack.sh
+# so later tempest tests starts failing instead
+# logsearch log --job-group nova-devstack --result FAILURE 'Job for pmlogger.service failed because a timeout was exceeded.'
+#
+searches:
+  bug-xxx-pmlogger-timeout:
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    regex: 'Job for pmlogger.service failed because a timeout was exceeded.'
