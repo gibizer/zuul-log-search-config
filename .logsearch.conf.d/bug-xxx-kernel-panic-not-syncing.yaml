@@ -1,0 +1,6 @@
+searches:
+  bug-xxx-kernel-panic-not-syncing:
+    job-groupss:
+      - nova-devstack
+    result: FAILURE
+    regex: "Kernel panic - not syncing: IO-APIC . timer doesn.t work!"

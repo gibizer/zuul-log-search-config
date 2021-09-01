@@ -1,0 +1,9 @@
+# logsearch log --job-group nova-multinode --result FAILURE --file controller/logs/screen-q-svc.txt 'sqlalchemy.orm.exc.UnmappedInstanceError: Class .builtins.NoneType.'
+searches:
+  bug-xxx-port-binding-activation-fails-sqla-unmapped:
+    job-groupss:
+      - nova-multinode
+    files:
+      - controller/logs/screen-q-svc.txt
+    result: FAILURE      
+    regex: 'sqlalchemy.orm.exc.UnmappedInstanceError: Class .builtins.NoneType.'

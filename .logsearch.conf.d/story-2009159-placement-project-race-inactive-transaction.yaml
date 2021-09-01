@@ -1,0 +1,13 @@
+# https://storyboard.openstack.org/#!/story/2009159
+# placement.exception.ProjectNotFound and "Duplicate entry" when requesting VM creation
+# logsearch log --job octavia-v2-act-stdby-dsvm-scenario --result FAILURE --file controller/logs/screen-placement-api.txt 'placement/objects/project.py., line .*, in _get_project_by_external_id|This session is in .inactive. state, due to the SQL transaction being rolled back'
+searches:
+  story-2009159-placement-project-race-inactive-transaction:
+    jobs:
+      - octavia-v2-act-stdby-dsvm-scenario
+    files:
+      - controller/logs/screen-placement-api.txt
+    result: FAILURE
+    branches:
+      - master
+    regex: 'placement/objects/project.py., line .*, in _get_project_by_external_id|This session is in .inactive. state, due to the SQL transaction being rolled back'
