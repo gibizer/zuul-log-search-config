@@ -1,0 +1,12 @@
+# See https://review.opendev.org/c/openstack/placement/+/807014/4#message-1948dd50b0c3b27f059574861c8a0711a37dda37
+# logsearch log --result FAILURE --job-group nova-devstack 'Failed to delete allocations for consumer' --limit 30
+searches:
+  bug-xxx-generation-conflict:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack 
+    # FAILURE could be also match this
+    result: FAILURE
+    branches:
+      - master
+    regex: 'Failed to delete allocations for consumer'

@@ -1,0 +1,8 @@
+# logsearch log --project openstack/nova --job-group nova-unit-test --resul FAILURE 'TypeError: Can.t upgrade a READER transaction to a WRITER mid-transaction' --limit 30
+searches:
+  bug-xxx-cant-upgrade-reader-to-writer:
+    project: openstack/nova
+    job-groups:
+      - nova-unit-test 
+    result: FAILURE
+    regex: 'TypeError: Can.t upgrade a READER transaction to a WRITER mid-transaction'

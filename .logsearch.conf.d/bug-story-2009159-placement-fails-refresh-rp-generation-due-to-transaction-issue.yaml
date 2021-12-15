@@ -1,0 +1,13 @@
+# https://storyboard.openstack.org/#!/story/2009159
+# https://review.opendev.org/c/openstack/placement/+/807014
+# logsearch log --result FAILURE  --job-group nova-devstack --file controller/logs/screen-placement-api.txt 'Exceeded retry limit of 10 on allocations write'
+searches:
+  bug-story-2009159-placement-fails-refresh-rp-generation-due-to-transaction-issue:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack 
+    files:
+      - controller/logs/screen-placement-api.txt
+    branches:
+      - master
+    regex: 'Exceeded retry limit of 10 on allocations write'

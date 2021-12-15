@@ -5,6 +5,8 @@ searches:
   story-2009159-placement-project-race-inactive-transaction:
     jobs:
       - octavia-v2-act-stdby-dsvm-scenario
+    job-groups:
+      - nova-devstack
     files:
       - controller/logs/screen-placement-api.txt
     result: FAILURE

@@ -1,0 +1,12 @@
+# bug: https://bugs.launchpad.net/neutron/+bug/1952508
+# [OVN] "TestAgentMonitor.test_agent_change_controller" failing randomly
+# logsearch log --voting --result FAILURE --job neutron-functional-with-uwsgi 'return self.agents\[key\]|neutron.tests.functional.plugins.ml2.drivers.ovn.mech_driver.ovsdb.test_ovsdb_monitor.TestAgentMonitor.test_network_agent_present .* ... FAILED'  --limit 30
+searches:
+  bug-1952508-key-error-in-functional:
+    jobs:
+      - neutron-functional-with-uwsgi
+    result: FAILURE
+    regex: >- 
+      return self.agents\[key\]|
+      neutron.tests.functional.plugins.ml2.drivers.ovn.mech_driver.ovsdb.test_ovsdb_monitor.TestAgentMonitor.test_network_agent_present .* ... FAILED|
+      neutron.tests.functional.plugins.ml2.drivers.ovn.mech_driver.ovsdb.test_ovsdb_monitor.TestAgentMonitor.test_agent_change_controller .* ... FAILED

@@ -1,0 +1,9 @@
+# bug: https://bugs.launchpad.net/neutron/+bug/1953479
+# Timeout in the scenario jobs' execution
+# logsearch log --voting --result TIMED_OUT --job-group neutron-devstack '\[\d\d\d\d\..*\] ... ok|RESULT_TIMED_OUT'
+searches:
+  bug-1953479-slow-test:
+    job-groups:
+      - neutron-devstack
+    result: TIMED_OUT
+    regex: '\[\d\d\d\d\..*\] ... ok'

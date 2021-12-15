@@ -1,0 +1,11 @@
+
+# logsearch log --job-group nova-functional --result FAILURE 'in update_pci_request_spec_with_allocated_interface_name' --limit 30
+searches:
+  bug-xxx-unshelve-UnexpectedResourceProviderNameForPCIRequest-instance-fault:
+    project: openstack/nova
+    job-groups:
+      - nova-functional
+    result: FAILURE
+    branches:
+      - master
+    regex: 'in update_pci_request_spec_with_allocated_interface_name'
