@@ -1,0 +1,8 @@
+# logsearch log --job-group nova-devstack --result FAILURE 'Unable to complete operation on network .*. There are one or more ports still in use on the network'
+searches:
+  bug-xxx-network-in-use:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    regex: 'Unable to complete operation on network .*. There are one or more ports still in use on the network'

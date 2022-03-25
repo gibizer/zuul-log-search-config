@@ -1,0 +1,10 @@
+# logsearch log --job-group nova-devstack --result FAILURE --file controller/logs/mysql/error_log.txt  'Starting XA crash recovery...' --limit 100
+searches:
+  bug-xxx-mysql-crash:
+    files:
+    - controller/logs/mysql/error_log.txt
+    job-groups:
+    - nova-devstack
+    regex: Starting XA crash recovery...
+    result: FAILURE
+

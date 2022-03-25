@@ -1,0 +1,9 @@
+# logsearch log --job-group nova-functional --result FAILURE 'Global DB state changed underneath us' --limit 10
+# https://bugs.launchpad.net/nova/+bug/1959677
+searches:
+  bug-1959677-global-db-state-changed:
+    project: openstack/nova
+    job-groups:
+      - nova-functional
+    result: FAILURE
+    regex: 'Global DB state changed underneath us'

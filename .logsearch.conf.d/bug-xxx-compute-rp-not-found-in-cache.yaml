@@ -1,0 +1,11 @@
+# logsearch log --job-group nova-devstack --result FAILURE --file controller/logs/screen-n-cpu.txt 'ValueError: No such provider' --days 4
+searches:
+  bug-xxx-compute-rp-not-found-in-cache:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    files:
+      - controller/logs/screen-n-cpu.txt
+      - compute1/logs/screen-n-cpu.txt
+    regex: 'ValueError: No such provider'
