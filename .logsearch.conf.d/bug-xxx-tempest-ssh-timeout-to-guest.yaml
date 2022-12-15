@@ -1,0 +1,8 @@
+# logsearch log --job-group nova-devstack --result FAILURE 'Connection to the .* via SSH timed out' --limit 100
+searches:
+  bug-xxx-tempest-ssh-timeout-to-guest.yaml:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack 
+    result: FAILURE
+    regex: 'Connection to the .* via SSH timed out'

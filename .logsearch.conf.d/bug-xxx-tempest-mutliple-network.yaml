@@ -1,0 +1,6 @@
+searches:
+  bug-xxx-tempest-mutliple-network:
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    regex: 'Multiple possible networks found, use a Network ID to be more specific'

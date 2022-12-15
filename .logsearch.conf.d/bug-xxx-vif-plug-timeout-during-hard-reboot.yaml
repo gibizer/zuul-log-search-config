@@ -1,0 +1,11 @@
+# logsearch log --job-group nova-devstack --result FAILURE 'Timeout waiting for.*network-vif-plugged.*for instance with vm_state active and task_state reboot_started_hard' --file controller/logs/screen-n-cpu.txt
+searches:
+  bug-xxx-vif-plug-timeout-during-hard-reboot:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    files:
+      - controller/logs/screen-n-cpu.txt
+      - compute1/logs/screen-n-cpu.txt
+    regex: 'Timeout waiting for.*network-vif-plugged.*for instance with vm_state active and task_state reboot_started_hard'

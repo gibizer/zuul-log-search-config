@@ -1,0 +1,14 @@
+# logsearch log --review 840931 --patchset 1 --voting --result POST_FAILURE --file controller/logs/screen-n-cpu.txt --file compute1/logs/screen-n-cpu.txt --file controller/logs/screen-c-api.txt  'Instance failed block device setup: cinderclient.exceptions.ClientException: Unable to update the attachment. .HTTP 500.' 'Unable to update the attachment.: oslo_messaging.exceptions.MessagingTimeout: Timed out waiting for a reply to message ID' 
+searches:
+  bug-xxx-cinder-rabbit-timeout.yaml:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    result: POST_FAILURE
+    files:
+      - controller/logs/screen-n-cpu.txt
+      - compute1/logs/screen-n-cpu.txt
+      - controller/logs/screen-c-api.txt
+    regex:
+      - 'Instance failed block device setup: cinderclient.exceptions.ClientException: Unable to update the attachment. .HTTP 500.'
+      - 'Unable to update the attachment.: oslo_messaging.exceptions.MessagingTimeout: Timed out waiting for a reply to message ID'

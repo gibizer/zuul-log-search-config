@@ -1,0 +1,11 @@
+#logsearch log --job nova-grenade-multinode --result FAILURE --branch stable/wallaby --file controller/logs/grenade.sh_log.txt 'ERROR: Links are not allowed as constraints'
+# https://bugs.launchpad.net/devstack/+bug/1906322
+searches:
+  bug-1906322-pip-link-in-constraints:
+    files:
+    - controller/logs/grenade.sh_log.txt
+    jobs:
+    - nova-grenade-multinode
+    result: FAILURE
+    regex: 'ERROR: Links are not allowed as constraints'
+

@@ -1,0 +1,12 @@
+# logsearch log --result FAILURE --job-group nova-devstack --file controller/logs/screen-n-cpu.txt --file compute1/logs/screen-n-cpu.txt 'Run out of retry while detaching device .* with device alias .* from instance .* from the .* domain config. Device is still attached to the guest.'
+# https://bugs.launchpad.net/nova/+bug/1960346
+searches:
+  bug-1960346-volume-detach:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    files:
+      - controller/logs/screen-n-cpu.txt
+      - compute1/logs/screen-n-cpu.txt
+    result: FAILURE
+    regex: 'Run out of retry while detaching device .* with device alias .* from instance .* from the .* domain config. Device is still attached to the guest.'

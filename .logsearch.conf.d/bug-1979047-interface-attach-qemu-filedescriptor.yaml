@@ -1,0 +1,11 @@
+#logsearch log  --job tempest-integrated-compute-centos-9-stream --result FAILURE --file controller/logs/screen-n-cpu.txt 'libvirt.libvirtError: internal error: unable to execute QEMU command .netdev_add.: File descriptor named ..null.. has not been found'
+searches:
+  bug-1979047-interface-attach-qemu-filedescriptor:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    files:
+      - controller/logs/screen-n-cpu.txt
+      - compute1/logs/screen-n-cpu.txt
+    result: FAILURE
+    regex: 'libvirt.libvirtError: internal error: unable to execute QEMU command .netdev_add.: File descriptor named ..null.. has not been found'

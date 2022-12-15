@@ -1,0 +1,12 @@
+# same issue as bug-1960346-volume-detach but on older branches we have
+# a different retry loop and logging
+searches:
+  bug-1960346-volume-detach-old-retry:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    files:
+      - controller/logs/screen-n-cpu.txt
+      - compute1/logs/screen-n-cpu.txt
+    result: FAILURE
+    regex: 'Guest refused to detach volume .* nova.exception.DeviceDetachFailed: Device detach failed for vdb: Unable to detach the device from the live config.'

@@ -1,0 +1,9 @@
+# logsearch log --job-group nova-devstack  --voting --result FAILURE 'No matching distribution found for'
+searches:
+  bug-xxx-no-matching-distribution:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    regex: 'No matching distribution found for'
+

@@ -6,5 +6,6 @@ searches:
   bug-xxx-pmlogger-timeout:
     job-groups:
       - nova-devstack
+      - neutron-devstack
     result: FAILURE
     regex: 'Job for pmlogger.service failed because a timeout was exceeded.'

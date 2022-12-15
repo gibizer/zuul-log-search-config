@@ -1,0 +1,10 @@
+# logsearch log --result FAILURE --job nova-grenade-multinode --branch stable/train '/bin/sh: .: install_ceph_remote: not found'
+searches:
+  bug-xxx-ceph-install-fails:
+    jobs:
+      - nova-grenade-multinode
+    branches: 
+      - stable/train
+    result: FAILURE
+    regex: '/bin/sh: .: install_ceph_remote: not found'
+

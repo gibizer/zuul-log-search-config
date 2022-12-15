@@ -1,0 +1,11 @@
+# logsearch log --review 841444 --patchset 3 --voting --result FAILURE --file compute1/logs/screen-n-cpu.txt --file controller/logs/screen-n-cpu.txt 'Failed to swap volume .* for .*: nova.exception.VolumeRebaseFailed: Volume rebase failed: internal error: unable to execute QEMU command .drive-mirror.: Could not open .*: Permission denied'
+searches:
+  bug-xxx-volume-swap-rebase-driver-mirror-permission:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    files:
+      - compute1/logs/screen-n-cpu.txt
+      - controller/logs/screen-n-cpu.txt
+    regex: 'Failed to swap volume .* for .*: nova.exception.VolumeRebaseFailed: Volume rebase failed: internal error: unable to execute QEMU command .drive-mirror.: Could not open .*: Permission denied'

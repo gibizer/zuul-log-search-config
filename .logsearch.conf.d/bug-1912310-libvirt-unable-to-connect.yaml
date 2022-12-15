@@ -8,8 +8,6 @@ searches:
       - nova-live-migration
       - nova-next
       - nova-grenade-multinode
-    branches:
-      - master
     files:
       - job-output.txt
       - controller/logs/screen-n-cpu.txt

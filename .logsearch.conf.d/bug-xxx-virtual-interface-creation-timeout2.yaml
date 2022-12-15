@@ -1,15 +1,12 @@
 # logsearch log --project openstack/nova --job nova-multi-cell --branch master --result FAILURE --file compute1/logs/screen-n-cpu.txt --file controller/logs/screen-n-cpu.txt '\] nova.exception.VirtualInterfaceCreateException: Virtual Interface creation failed' --before-context 11  --limit 10
 searches:
-  bug-xxx-virtual-interface-creation-timeout:
+  bug-xxx-virtual-interface-creation-timeout2:
     project: openstack/nova
     job-groups:
       - nova-devstack
-    result: FAILURE
+    result: POST_FAILURE
     files:
       - compute1/logs/screen-n-cpu.txt
       - controller/logs/screen-n-cpu.txt
-      # pre zuulv3
-      - logs/subnode-2/screen-n-cpu.txt
-      - logs/screen-n-cpu.txt
     before-context: 11
-    regex: '\] nova.exception.VirtualInterfaceCreateException: Virtual Interface creation failed|Setting instance vm_state to ERROR: VirtualInterfaceCreateException: Virtual Interface creation failed'
+    regex: '\] nova.exception.VirtualInterfaceCreateException: Virtual Interface creation failed'
