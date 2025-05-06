@@ -1,0 +1,11 @@
+# logsearch log --review 948064 --patchset 4 --voting --result FAILURE --file controller/logs/screen-n-api.txt 'The image cannot be deleted because it is in use through the backend store outside of Glance.'   ─╯
+searches:
+  bug-2109428-glance-cannot-delete-image-in-use.yaml:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    files:
+      - controller/logs/screen-n-api.txt
+    regex:
+      - 'The image cannot be deleted because it is in use through the backend store outside of Glance.'
