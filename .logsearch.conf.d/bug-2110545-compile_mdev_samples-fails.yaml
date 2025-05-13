@@ -1,0 +1,8 @@
+# logsearch log --job-group nova-devstack --days 7 --result POST_FAILURE  'finished compile_mdev_samples with result 1'
+searches:
+  bug-2110545-compile_mdev_samples-fails:
+    project: openstack/nova
+    job:
+      - nova-next
+    result: POST_FAILURE
+    regex: 'finished compile_mdev_samples with result 1'
