@@ -1,0 +1,14 @@
+# logsearch log --review 948072 --patchset 9 --job nova-lvm --file job-output.txt --file controller/logs/screen-n-api.txt "urllib3.exceptions.ReadTimeoutError" "POST.*os-interface.*status: 500" "AttachInterfacesTestJSON.*oslo_messaging.exceptions.MessagingTimeout: Timed out waiting for a reply"
+searches:
+  bug-xxx-post-os-interface-times-out.yaml:
+    project: openstack/nova
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    files:
+      - controller/logs/screen-n-api.txt
+      - job-output.txt
+    regex:
+      - "urllib3.exceptions.ReadTimeoutError"
+      - "POST.*os-interface.*status: 500"
+      - "AttachInterfacesTestJSON.*oslo_messaging.exceptions.MessagingTimeout: Timed out waiting for a reply"
