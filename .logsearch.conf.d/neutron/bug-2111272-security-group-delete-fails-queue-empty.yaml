@@ -1,0 +1,10 @@
+#logsearch log --job grenade-skip-level-always --review 948079 --patchset 13 --result FAILURE --file controller/logs/screen-neutron-api.txt --file controller/logs/grenade.sh_log.txt 'Error during notification for neutron.plugins.ml2.drivers.ovn.mech_driver.mech_driver.OVNMechanismDriver.* security_group, after_delete: ovsdbapp.exceptions.TimeoutException:.*PgDelCommand.*exceeded timeout 180 seconds, cause: Result queue is empty'
+searches:
+  bug-2111272-security-group-delete-fails-queue-empty:
+    job-groups:
+      - neutron-devstack
+      - nova-devstack
+    result: FAILURE
+    files: 
+      - controller/logs/screen-neutron-api.txt
+    regex: 'Error during notification for neutron.plugins.ml2.drivers.ovn.mech_driver.mech_driver.OVNMechanismDriver.* security_group, after_delete: ovsdbapp.exceptions.TimeoutException:.*PgDelCommand.*exceeded timeout 180 seconds, cause: Result queue is empty'
