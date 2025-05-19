@@ -1,0 +1,12 @@
+#logsearch log --job-group nova-devstack --review 948072 --patchset 12 --result FAILURE --file controller/logs/screen-n-cpu.txt "nova.exception.ImageUnacceptable: Image .* is unacceptable: Unable to convert image to raw: Image .* is unacceptable: Unable to convert image to raw: Unexpected error while running command." "qemu-img: error while reading at byte.*: Input/output error"
+searches:
+  bug-2111269-qemu-image-fails:
+    project: openstack/nova
+    job-group:
+      - nova-devstack
+    result: FAILURE
+    files:
+      - controller/logs/screen-n-cpu.txt
+    regex: 
+      - 'nova.exception.ImageUnacceptable: Image .* is unacceptable: Unable to convert image to raw: Image .* is unacceptable: Unable to convert image to raw: Unexpected error while running command.'
+      - 'qemu-img: error while reading at byte.*: Input/output error'
