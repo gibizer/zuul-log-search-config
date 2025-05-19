@@ -1,5 +1,5 @@
 searches:
-  bug-xxx-kernel-panic-not-syncing:
+  bug-xxx-kernel-panic-not-syncing-io-apic:
     job-groupss:
       - nova-devstack
     result: FAILURE
