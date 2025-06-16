@@ -1,0 +1,7 @@
+# logsearch log --job-group neutron-devstack --result FAILURE --days 7  'Security Group None cannot perform precommit_delete due to Callback'                                                                    ─╯
+searches:
+  bug-2114732-neutron_security_grp_pre_commit:
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    regex: 'Security Group None cannot perform precommit_delete due to Callback' 

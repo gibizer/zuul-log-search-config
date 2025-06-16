@@ -1,0 +1,11 @@
+# logsearch log --job-group nova-devstack --job-group neutron-devstack --file controller/logs/screen-q-svc.txt "RuntimeError: Second simultaneous write on fileno" --file controller/logs/screen-neutron-api.txt --days 7 --result TIMED_OUT
+searches:
+  bug-xxx-neutron-eventlet-socket-write:
+    job-groups:
+      - nova-devstack
+      - neutron-devstack
+    result: TIMED_OUT
+    files:
+      - controller/logs/screen-q-svc.txt
+      - controller/logs/screen-neutron-api.txt
+    regex: 'RuntimeError: Second simultaneous write on fileno'
