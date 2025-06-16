@@ -1,0 +1,7 @@
+# logsearch log --job-group nova-devstack --result FAILURE --days 7  'Error: mgr not available after 15 tries'                                                                                                   ─╯
+searches:
+  bug-2114734-ceph-mgr-fails-to-start:
+    job-groups:
+      - nova-devstack
+    result: FAILURE
+    regex: 'Error: mgr not available after 15 tries' 
